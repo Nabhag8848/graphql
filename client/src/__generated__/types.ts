@@ -91,6 +91,13 @@ export type Track = {
   title: Scalars['String']['output'];
 };
 
+export type IncrementTrackViewsMutationVariables = Exact<{
+  incrementTrackViewsId: Scalars['ID']['input'];
+}>;
+
+
+export type IncrementTrackViewsMutation = { __typename?: 'Mutation', incrementTrackViews?: { __typename?: 'IncrementTrackViewsResponse', code: number, success: boolean, message: string, track?: { __typename?: 'Track', id: string, numberOfViews?: number | null } | null } | null };
+
 export type GetTrackQueryVariables = Exact<{
   trackId: Scalars['ID']['input'];
 }>;
