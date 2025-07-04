@@ -2,5 +2,3 @@ node_modules
 .DS_Store
 .env
 */**/dist
-*/**/types.ts
-*/**/__generated__
