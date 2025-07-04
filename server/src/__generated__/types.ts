@@ -32,7 +32,7 @@ export type Author = {
 export type IncrementTrackViewsResponse = {
   __typename?: 'IncrementTrackViewsResponse';
   /** Similar to HTTP status code, represents the status of the mutation */
-  code: Scalars['String']['output'];
+  code: Scalars['Int']['output'];
   /** Human-readable message for the UI */
   message: Scalars['String']['output'];
   /** Indicates whether the mutation was successful */
@@ -201,7 +201,7 @@ export type AuthorResolvers<ContextType = DataSourceContext, ParentType extends 
 };
 
 export type IncrementTrackViewsResponseResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['IncrementTrackViewsResponse'] = ResolversParentTypes['IncrementTrackViewsResponse']> = {
-  code?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  code?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   success?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   track?: Resolver<Maybe<ResolversTypes['Track']>, ParentType, ContextType>;

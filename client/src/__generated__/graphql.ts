@@ -26,6 +26,18 @@ export type Author = {
   photo?: Maybe<Scalars['String']['output']>;
 };
 
+export type IncrementTrackViewsResponse = {
+  __typename?: 'IncrementTrackViewsResponse';
+  /** Similar to HTTP status code, represents the status of the mutation */
+  code: Scalars['Int']['output'];
+  /** Human-readable message for the UI */
+  message: Scalars['String']['output'];
+  /** Indicates whether the mutation was successful */
+  success: Scalars['Boolean']['output'];
+  /** Newly updated track after a successful mutation */
+  track?: Maybe<Track>;
+};
+
 /** A Module is a single unit of teaching. Multiple Modules compose a Track */
 export type Module = {
   __typename?: 'Module';
@@ -34,6 +46,16 @@ export type Module = {
   length?: Maybe<Scalars['Int']['output']>;
   /** The Module's title */
   title: Scalars['String']['output'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  incrementTrackViews?: Maybe<IncrementTrackViewsResponse>;
+};
+
+
+export type MutationIncrementTrackViewsArgs = {
+  id: Scalars['ID']['input'];
 };
 
 export type Query = {
