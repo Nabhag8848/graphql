@@ -7,6 +7,22 @@ export const typeDefs = gql`
     "Fetch a specific track, provided a track's ID"
     track(id: ID!): Track
   }
+
+  type Mutation {
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse
+  }
+
+  type IncrementTrackViewsResponse {
+    "Similar to HTTP status code, represents the status of the mutation"
+    code: String!
+    "Indicates whether the mutation was successful"
+    success: Boolean!
+    "Human-readable message for the UI"
+    message: String!
+    "Newly updated track after a successful mutation"
+    track: Track
+  }
+
   "A Module is a single unit of teaching. Multiple Modules compose a Track"
   type Module {
     id: ID!
